@@ -175,6 +175,23 @@ dependencies = [
  "clap",
  "divan",
  "itertools",
+ "lazy_static",
+ "regex",
+ "rstest",
+ "tempdir",
+ "test-log",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
+name = "day-04"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "clap",
+ "divan",
+ "itertools",
  "rstest",
  "tempdir",
  "test-log",

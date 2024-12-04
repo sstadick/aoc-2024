@@ -1,5 +1,5 @@
 [package]
-name = "day-03"
+name = "day-04"
 version = "0.1.0"
 edition = "2021"
 
@@ -11,8 +11,6 @@ tracing.workspace = true
 tracing-subscriber.workspace = true
 anyhow.workspace = true
 clap.workspace = true
-regex = "1.11.1"
-lazy_static = "1.5.0"
 
 [dev-dependencies]
 divan.workspace = true
@@ -21,6 +19,6 @@ test-log.workspace = true
 tempdir.workspace = true
 
 [[bench]]
-name = "day-03-bench"
+name = "day-04-bench"
 path = "benches/benchmarks.rs"
 harness = false
