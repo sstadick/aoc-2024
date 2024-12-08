@@ -22,24 +22,17 @@ pub fn process(input: &[u8]) -> anyhow::Result<String> {
         for pair in locations.iter().combinations(2) {
             let loc_a = pair[0];
             let loc_b = pair[1];
-            let dx_dy = loc_a.get_dx_dy(loc_b);
+            let dx_dy_a = *loc_b - *loc_a;
+            let dx_dy_b = *loc_a - *loc_b;
 
-            // TODO: there must be a way to tell which directino to move in for each point?
-            let loc_a_1 = *loc_a + dx_dy;
-            let loc_a_2 = *loc_a - dx_dy;
-            let loc_b_1 = *loc_b - dx_dy;
-            let loc_b_2 = *loc_b + dx_dy;
-            if loc_a_1 != *loc_b && grid.contains(loc_a_1) {
+            let loc_a_1 = *loc_b + dx_dy_a;
+            let loc_b_1 = *loc_a + dx_dy_b;
+
+            if grid.contains(loc_a_1) {
                 positions.insert(loc_a_1);
             }
-            if loc_a_2 != *loc_b && grid.contains(loc_a_2) {
-                positions.insert(loc_a_2);
-            }
-            if loc_b_1 != *loc_a && grid.contains(loc_b_1) {
+            if grid.contains(loc_b_1) {
                 positions.insert(loc_b_1);
-            }
-            if loc_b_2 != *loc_a && grid.contains(loc_b_2) {
-                positions.insert(loc_b_2);
             }
         }
     }
