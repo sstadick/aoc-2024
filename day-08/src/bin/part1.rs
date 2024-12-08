@@ -1,11 +1,11 @@
-use {{crate_name}}::part2::process;
+use day_08::part1::process;
 use anyhow::Context;
 use clap::Parser;
 
 #[derive(Parser, Debug)]
-#[command(name = "{{crate_name}}")]
+#[command(name = "day_08")]
 pub struct Args {
-    #[clap(short, long, default_value = "input2.txt")]
+    #[clap(short, long, default_value = "input1.txt")]
     input: String,
 }
 
@@ -14,7 +14,7 @@ fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt::init();
     let _args = Args::parse();
 
-    let result = process(include_bytes!("../../input2.txt")).context("process part 2")?;
+    let result = process(include_bytes!("../../input1.txt")).context("process part 1")?;
     println!("{}", result);
     Ok(())
 }

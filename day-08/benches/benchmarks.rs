@@ -1,4 +1,4 @@
-use {{crate_name}}::*;
+use day_08::*;
 
 fn main() {
     // Run registered benchmarks.

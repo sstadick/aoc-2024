@@ -20,6 +20,21 @@ impl Point {
     pub const fn new(x: isize, y: isize) -> Self {
         Self { x, y }
     }
+
+    pub fn get_dx_dy(&self, other: &Self) -> Point {
+        Point {
+            x: other.x - self.x,
+            y: other.y - self.y,
+        }
+    }
+
+    pub fn dist(&self, other: &Self) -> f64 {
+        ((other.x - self.x).pow(2) as f64 + (other.y - self.y).pow(2) as f64).sqrt()
+    }
+
+    pub fn slope(&self, other: &Self) -> f64 {
+        (other.y - self.y) as f64 / (other.x - self.x) as f64
+    }
 }
 
 impl Add for Point {

@@ -1,9 +1,9 @@
-use {{crate_name}}::part2::process;
+use day_08::part2::process;
 use anyhow::Context;
 use clap::Parser;
 
 #[derive(Parser, Debug)]
-#[command(name = "{{crate_name}}")]
+#[command(name = "day_08")]
 pub struct Args {
     #[clap(short, long, default_value = "input2.txt")]
     input: String,
