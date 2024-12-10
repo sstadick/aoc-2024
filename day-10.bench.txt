@@ -1,0 +1,10 @@
+day_10_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part1      55.79 µs      │ 143.2 µs      │ 57.41 µs      │ 58.25 µs      │ 100     │ 100
+
+day_10_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part2      52.08 µs      │ 97.29 µs      │ 52.45 µs      │ 54.57 µs      │ 100     │ 100
+
+# Rayon
+day_10_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part1      82.91 µs      │ 314.5 µs      │ 122.9 µs      │ 124.4 µs      │ 100     │ 100
+
