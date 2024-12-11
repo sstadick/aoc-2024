@@ -18,3 +18,11 @@ day_11_bench  fastest       │ slowest       │ median        │ mean        
 day_11_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
 ╰─ part2      1.788 ms      │ 2.412 ms      │ 1.797 ms      │ 1.813 ms      │ 100     │ 100
 
+# M1 FxHash
+day_11_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+├─ part1      55.7 µs       │ 103.3 µs      │ 56.56 µs      │ 57.86 µs      │ 100     │ 100
+╰─ part2      3.443 ms      │ 5.152 ms      │ 3.517 ms      │ 3.589 ms      │ 100     │ 100
+
+day_11_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part2      3.443 ms      │ 5.274 ms      │ 3.636 ms      │ 3.755 ms      │ 100     │ 100
+
