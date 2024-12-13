@@ -10,7 +10,6 @@ version = "0.1.0"
 day2 = "mojo build --march native -I /Users/u103330/dev/ExtraMojo day2.mojo && ./day2 ../../../day-02/input1.txt"
 day2-tiny = "mojo build -I /Users/u103330/dev/ExtraMojo day2.mojo && ./day2 ./tiny.txt"
 day2-bench = "hyperfine --warmup 3 './day2 ../../../day-02/input1.txt'"
-day11 = "mojo build --march native -I /Users/u103330/dev/ExtraMojo day11.mojo && ./day11 ../../../day-11/input1.txt"
 
 [dependencies]
 max = ">=24.5.0,<25"
