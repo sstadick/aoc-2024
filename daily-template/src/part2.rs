@@ -12,7 +12,7 @@ mod tests {
         todo!("haven't built test yet");
         let input = b"";
 
-        assert_eq!("", process(&input)?);
+        assert_eq!("", process(input)?);
         Ok(())
     }
 }
