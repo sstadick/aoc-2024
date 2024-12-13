@@ -1,0 +1,28 @@
+day_11_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part1      268.3 µs      │ 338.6 µs      │ 293.8 µs      │ 293.3 µs      │ 100     │ 100
+
+day_11_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part2      9.256 ms      │ 9.44 ms       │ 9.291 ms      │ 9.298 ms      │ 100     │ 100
+
+# Instead of counting per stone, this uses the full input list and removes the outer loop
+day_11_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part1      103.2 µs      │ 121.8 µs      │ 109.6 µs      │ 109.3 µs      │ 100     │ 100
+
+day_11_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part2      3.868 ms      │ 4.023 ms      │ 3.896 ms      │ 3.901 ms      │ 100     │ 100
+
+# FxHash
+day_11_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part1      26.54 µs      │ 97.83 µs      │ 27.95 µs      │ 29.12 µs      │ 100     │ 100
+
+day_11_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part2      1.788 ms      │ 2.412 ms      │ 1.797 ms      │ 1.813 ms      │ 100     │ 100
+
+# M1 FxHash
+day_11_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+├─ part1      55.7 µs       │ 103.3 µs      │ 56.56 µs      │ 57.86 µs      │ 100     │ 100
+╰─ part2      3.443 ms      │ 5.152 ms      │ 3.517 ms      │ 3.589 ms      │ 100     │ 100
+
+day_11_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part2      3.443 ms      │ 5.274 ms      │ 3.636 ms      │ 3.755 ms      │ 100     │ 100
+

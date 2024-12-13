@@ -1,5 +1,10 @@
 import sys
 from collections import Optional
+from tensor import Tensor
+from time import perf_counter
+
+from ExtraMojo.fs.file import read_lines, find_chr_all_occurances
+from ExtraMojo.bench.bench import timeit
 
 alias SPACE = 32
 alias NEWLINE = 10
@@ -43,39 +48,68 @@ fn is_newline(value: UInt8) -> Bool:
     return value == NEWLINE
 
 
-fn check_safety(report: List[UInt8]) -> Bool:
+# TODO: try passing a ref again? or is it implicity one? hard to tell
+fn check_safety(borrowed report: List[UInt8]) -> Bool:
     var previous = Optional[UInt8](None)
     var direction = Optional[Direction](None)
     var is_safe = True
-    for i in range(0, len(report)):
-        var level = report[i]
+    # for i in range(0, len(report)):
+    #     var level = report[i]
+    for level in report:
         if not previous and not direction:
-            previous = level
+            previous = level[]
         elif previous and not direction:
-            new_dir = Direction.get_direction(previous.value(), level)
+            new_dir = Direction.get_direction(previous.value(), level[])
             var diff = abs(
-                previous.value().cast[DType.int16]() - level.cast[DType.int16]()
+                previous.value().cast[DType.int16]()
+                - level[].cast[DType.int16]()
             )
             if not (diff > 0 and diff < 4):
                 is_safe = False
                 break
             direction = new_dir
-            previous = level
+            previous = level[]
         elif previous and direction:
             # Could just be an else to speed up.
-            new_dir = Direction.get_direction(previous.value(), level)
+            new_dir = Direction.get_direction(previous.value(), level[])
             diff = abs(
-                previous.value().cast[DType.int16]() - level.cast[DType.int16]()
+                previous.value().cast[DType.int16]()
+                - level[].cast[DType.int16]()
             )
             if not (diff > 0 and diff < 4) or direction.value() != new_dir:
                 is_safe = False
                 break
             direction = new_dir
-            previous = level
+            previous = level[]
     return is_safe
 
 
-fn main() raises:
+fn fill_report[T: DType](borrowed line: Tensor[T], inout report: List[UInt8]):
+    var num: UInt8 = 0
+    for i in range(line.num_elements()):
+        if line[i] == SPACE:
+            report.append(num)
+            num = 0
+            continue
+        num = (num * 10) + (line[i].cast[DType.uint8]() - 48)
+
+    # get the last element
+    report.append(num)
+
+
+fn read_lines_method() raises:
+    var input_file = sys.arg.argv()[1]
+    var answer = 0
+    var report = List[UInt8]()
+    for line in read_lines(input_file):
+        fill_report[DType.uint8](line[], report)
+        if check_safety(report):
+            answer += 1
+        report.clear()
+    # print(answer)
+
+
+fn original() raises:
     var input_file = sys.arg.argv()[1]
     var bytes = open(input_file, "r").read_bytes()
     var answer = 0
@@ -105,3 +139,13 @@ fn main() raises:
         answer += 1
 
     print(answer)
+
+
+fn main() raises:
+    print("Timing original")
+    time = timeit[original]()
+    print("Took: ", time * 1000, "ms")
+
+    # print("Timing by line")
+    # time = timeit[read_lines_method]()
+    # print("Took: ", time / 1000, "ms")

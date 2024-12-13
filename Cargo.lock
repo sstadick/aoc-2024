@@ -73,6 +73,7 @@ dependencies = [
  "anyhow",
  "itertools",
  "num",
+ "rstest",
 ]
 
 [[package]]
@@ -322,6 +323,23 @@ dependencies = [
  "itertools",
  "rayon",
  "rstest",
+ "tempdir",
+ "test-log",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
+name = "day-11"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aoclib",
+ "clap",
+ "divan",
+ "itertools",
+ "rstest",
+ "rustc-hash",
  "tempdir",
  "test-log",
  "tracing",
@@ -843,6 +861,12 @@ dependencies = [
  "syn",
  "unicode-ident",
 ]
+
+[[package]]
+name = "rustc-hash"
+version = "2.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c7fb8039b3032c191086b10f11f319a6e99e1e82889c5cc6046f515c9db1d497"
 
 [[package]]
 name = "rustc_version"

@@ -1,6 +1,6 @@
 import sys
 from enum import Enum, auto
-from typing import List
+from typing import Iterable, List
 
 
 class Direction(Enum):
@@ -17,7 +17,7 @@ class Direction(Enum):
             return Direction.Decrease
 
 
-def is_safe(report: List[int]) -> bool:
+def is_safe(report: Iterable[int]) -> bool:
     previous = None
     direction = None
     is_safe = True
