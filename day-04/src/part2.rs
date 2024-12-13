@@ -1,9 +1,11 @@
+
 use crate::part1::Grid;
 
 #[tracing::instrument]
 pub fn process(input: &'static [u8]) -> anyhow::Result<String> {
     let grid = Grid::new(input)?;
     Ok(grid.count_occurrences_part2().to_string())
+
 }
 
 #[cfg(test)]

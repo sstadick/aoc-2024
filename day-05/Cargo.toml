@@ -1,5 +1,5 @@
 [package]
-name = "{{project-name}}"
+name = "day-05"
 version = "0.1.0"
 edition = "2021"
 
@@ -11,7 +11,6 @@ tracing.workspace = true
 tracing-subscriber.workspace = true
 anyhow.workspace = true
 clap.workspace = true
-aoclib = { path = "../aoclib" }
 
 [dev-dependencies]
 divan.workspace = true
@@ -20,6 +19,6 @@ test-log.workspace = true
 tempdir.workspace = true
 
 [[bench]]
-name = "{{project-name}}-bench"
+name = "day-05-bench"
 path = "benches/benchmarks.rs"
 harness = false
