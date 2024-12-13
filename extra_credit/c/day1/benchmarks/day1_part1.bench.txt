@@ -1,0 +1,4 @@
+Benchmark 1: ./day1_part1
+  Time (mean ± σ):     621.9 µs ± 572.4 µs    [User: 340.0 µs, System: 226.3 µs]
+  Range (min … max):   273.7 µs … 17157.6 µs    979 runs
+ 

@@ -15,7 +15,8 @@ create day:
     cargo generate --path ./daily-template --name {{day}}
     just get-input {{day}}
 run day part:
-    cargo run -p {{day}} --bin part{{part}} -- --input {{day}}/input{{part}}.txt
+    cargo run --release -p {{day}} --bin part{{part}} -- --input {{day}}/input{{part}}.txt
+
 
 # You can find SESSION by using Chrome tools:
 # 1) Go to https://adventofcode.com/2022/day/1/input

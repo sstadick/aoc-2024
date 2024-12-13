@@ -1,0 +1,26 @@
+[package]
+name = "day-12"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+itertools.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+anyhow.workspace = true
+clap.workspace = true
+aoclib = { path = "../aoclib" }
+rustc-hash = "2.1.0"
+
+[dev-dependencies]
+divan.workspace = true
+rstest.workspace = true
+test-log.workspace = true
+tempdir.workspace = true
+
+[[bench]]
+name = "day-12-bench"
+path = "benches/benchmarks.rs"
+harness = false

@@ -8,7 +8,7 @@ fn main() {
 #[divan::bench]
 fn part1() {
     part1::process(divan::black_box(
-        "../input1.txt",
+        include_bytes!("../input1.txt"),
     ))
     .unwrap();
 }
@@ -16,7 +16,7 @@ fn part1() {
 #[divan::bench]
 fn part2() {
     part2::process(divan::black_box(
-        "../input2.txt",
+        include_bytes!("../input2.txt"),
     ))
     .unwrap();
 }

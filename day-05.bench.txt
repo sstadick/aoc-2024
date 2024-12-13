@@ -1,0 +1,20 @@
+day_05_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part1      39.33 µs      │ 73.49 µs      │ 39.99 µs      │ 40.92 µs      │ 100     │ 100
+
+day_05_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part2      219.2 µs      │ 336.2 µs      │ 224 µs        │ 229.8 µs      │ 100     │ 100
+
+# Remove tracking of backwards_lookup since we never use it.
+day_05_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part1      37.58 µs      │ 76.87 µs      │ 37.7 µs       │ 38.93 µs      │ 100     │ 100
+
+day_05_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part2      217.5 µs      │ 269 µs        │ 220.8 µs      │ 224 µs        │ 100     │ 100
+
+# Removed branch in part2 that wasn't needed
+day_05_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part1      38.66 µs      │ 73.29 µs      │ 39.74 µs      │ 41.11 µs      │ 100     │ 100
+
+day_05_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part2      214.3 µs      │ 304.2 µs      │ 219.6 µs      │ 225.1 µs      │ 100     │ 100
+

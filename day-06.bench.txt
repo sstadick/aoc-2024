@@ -1,0 +1,16 @@
+day_06_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part1      208.1 µs      │ 329.5 µs      │ 250.9 µs      │ 249.3 µs      │ 100     │ 100
+
+day_06_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part2      393.6 ms      │ 438.9 ms      │ 426.5 ms      │ 425.7 ms      │ 100     │ 100
+
+# With rayon
+day_06_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part2      70.96 ms      │ 85.1 ms       │ 71.79 ms      │ 72.43 ms      │ 100     │ 100
+
+day_06_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part1      290.8 µs      │ 476.5 µs      │ 339.7 µs      │ 344.9 µs      │ 100     │ 100
+
+day_06_bench  fastest       │ slowest       │ median        │ mean          │ samples │ iters
+╰─ part2      64.06 ms      │ 234.6 ms      │ 69.58 ms      │ 72.89 ms      │ 100     │ 100
+
