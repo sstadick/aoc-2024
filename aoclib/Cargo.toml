@@ -6,3 +6,4 @@ edition = "2021"
 [dependencies]
 anyhow.workspace = true
 itertools.workspace = true
+num = "0.4.3"
