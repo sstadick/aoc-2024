@@ -12,9 +12,9 @@ pub struct Args {
 #[tracing::instrument]
 fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt::init();
-    let args = Args::parse();
+    let _args = Args::parse();
 
-    let result = process(&args.input).context("process part 1")?;
+    let result = process(include_bytes!("../../input1.txt")).context("process part 1")?;
     println!("{}", result);
     Ok(())
 }
