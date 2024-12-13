@@ -1,32 +1,31 @@
-use std::fmt::Debug;
-use std::path::Path;
+
+use crate::part1::Grid;
 
 #[tracing::instrument]
-pub fn process<P: AsRef<Path> + Debug>(_input: P) -> anyhow::Result<String> {
-    todo!("day 01 - part 2");
+pub fn process(input: &'static [u8]) -> anyhow::Result<String> {
+    let grid = Grid::new(input)?;
+    Ok(grid.count_occurrences_part2().to_string())
+
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    use std::io::Write;
-    use std::path::Path;
-    use tempdir::TempDir;
-
-    fn write_to_file<P: AsRef<Path>>(data: &str, file: P) {
-        let mut file = std::fs::File::create(file).unwrap();
-        file.write_all(data.as_bytes()).unwrap();
-    }
 
     #[test]
     fn test_process() -> anyhow::Result<()> {
-        todo!("haven't built test yet");
-        let input = "";
-        let dir = TempDir::new("test")?;
-        let file = dir.path().join("input2.txt");
-        write_to_file(input, &file);
+        let input = b".M.S......
+..A..MSMS.
+.M.S.MAA..
+..A.ASMSM.
+.M.S.M....
+..........
+S.S.S.S.S.
+.A.A.A.A..
+M.M.M.M.M.
+..........";
 
-        assert_eq!("", process(&file)?);
+        assert_eq!("9", process(input)?);
         Ok(())
     }
 }

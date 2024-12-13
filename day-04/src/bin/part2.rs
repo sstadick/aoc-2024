@@ -1,6 +1,8 @@
-use day_04::part2::process;
+
 use anyhow::Context;
 use clap::Parser;
+use day_04::part2::process;
+
 
 #[derive(Parser, Debug)]
 #[command(name = "day_04")]
@@ -12,9 +14,11 @@ pub struct Args {
 #[tracing::instrument]
 fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt::init();
-    let args = Args::parse();
 
-    let result = process(&args.input).context("process part 2")?;
+    let _args = Args::parse();
+
+    let result = process(include_bytes!("../../input2.txt")).context("process part 2")?;
+
     println!("{}", result);
     Ok(())
 }
