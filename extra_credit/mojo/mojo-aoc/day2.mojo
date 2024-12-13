@@ -1,10 +1,10 @@
 import sys
 from collections import Optional
 from tensor import Tensor
-from time import perf_counter
+from time import perf_counter_ns
 
 from ExtraMojo.fs.file import read_lines, find_chr_all_occurances
-from ExtraMojo.bench.bench import timeit
+from ExtraMojo.bench.bench import Bench
 
 alias SPACE = 32
 alias NEWLINE = 10
@@ -115,7 +115,7 @@ fn original() raises:
     var answer = 0
     var offset = 0
 
-    # Vars for the level
+    # sleep(0.0001)
 
     var report = List[UInt8]()
     var level: UInt8 = 0
@@ -142,9 +142,20 @@ fn original() raises:
 
 
 fn main() raises:
-    print("Timing original")
-    time = timeit[original]()
-    print("Took: ", time * 1000, "ms")
+    var bench = Bench(
+        name="Day2 Part1",
+        func=original,
+        max_iterations=1000,
+        warmup_iterations=5,
+    )
+
+    bench.benchmark()
+
+    # for _ in range(10):
+    #     start = perf_counter_ns()
+    #     original()
+    #     end = perf_counter_ns()
+    #     print((end - start) / 1000000000.0, " s")
 
     # print("Timing by line")
     # time = timeit[read_lines_method]()
