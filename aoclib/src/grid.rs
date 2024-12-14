@@ -134,6 +134,10 @@ impl Grid {
         })
     }
 
+    pub fn get_data(&self) -> &[u8] {
+        &self.data
+    }
+
     // "01234\n56789\nabcde\n"
     // [0, (0, 2), index  0], [1, (1, 2),  1], [2, (2, 2),  2], [3, (3, 2),  3], [4, (4, 2),  4]
     // [5, (0, 1), index  6], [6, (1, 1),  7], [7, (2, 1),  8], [8, (3, 1),  9], [9, (4, 1), 10]
@@ -162,6 +166,9 @@ impl Grid {
         // Calculate index: (row * row_length) + x position
         let index = (adjusted_y * row_length as isize) + point.x;
 
+        if index < 0 {
+            println!("Invalid point: {:?}", point);
+        }
         assert!(index >= 0);
         &mut self.data[index as usize]
     }
