@@ -48,10 +48,10 @@ pub fn process(input: &[u8]) -> anyhow::Result<String> {
             guard_set.insert((guard.x, guard.y));
         }
 
-        let distinct = guard_set.len();
-        if distinct == guards.len() || distinct == guards.len() - 1 || distinct == guards.len() - 2
-        {
-            let image = std::str::from_utf8(grid.get_data())?;
+        let image = std::str::from_utf8(grid.get_data())?;
+        // let distinct = guard_set.len();
+        // if distinct == guards.len() || distinct == guards.len() - 1 || distinct == guards.len() - 2
+        if image.contains("********") {
             println!("After {} Seconds", i);
             println!("{}", image);
             println!("------------------------------")
