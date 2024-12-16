@@ -83,6 +83,15 @@ impl SubAssign for Point {
     }
 }
 
+pub const MOVE_UP: u8 = b'^';
+pub const MOVE_LEFT: u8 = b'<';
+pub const MOVE_RIGHT: u8 = b'>';
+pub const MOVE_DOWN: u8 = b'v';
+
+pub const fn is_move(c: u8) -> bool {
+    matches!(c, MOVE_UP | MOVE_DOWN | MOVE_LEFT | MOVE_RIGHT)
+}
+
 pub const ORIGIN: Point = Point::new(0, 0);
 pub const DOWN: Point = Point::new(0, -1);
 pub const UP: Point = Point::new(0, 1);
@@ -132,6 +141,14 @@ impl Grid {
             height,
             data: data.to_vec(),
         })
+    }
+
+    pub fn num_rows(&self) -> usize {
+        self.height
+    }
+
+    pub fn num_cols(&self) -> usize {
+        self.width
     }
 
     pub fn get_data(&self) -> &[u8] {
