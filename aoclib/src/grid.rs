@@ -10,7 +10,7 @@ type PointIter = Box<dyn Iterator<Item = Point>>;
 type ViewIter<'a> = Box<dyn Iterator<Item = PointIter> + 'a>;
 
 /// A point representation
-#[derive(Debug, Clone, Copy, Hash, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, Hash, PartialEq, Eq, PartialOrd, Ord)]
 pub struct Point {
     pub x: isize,
     pub y: isize,
@@ -209,6 +209,13 @@ impl Grid {
 
     pub fn contains(&self, point: Point) -> bool {
         (0..self.width as isize).contains(&point.x) && (0..self.height as isize).contains(&point.y)
+    }
+
+    pub fn orthogonal_neighbors(&self, point: Point) -> impl Iterator<Item = Point> + '_ {
+        [UP, DOWN, LEFT, RIGHT]
+            .into_iter()
+            .map(move |dir| point + dir)
+            .filter(|p| self.contains(*p))
     }
 }
 
