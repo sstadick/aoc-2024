@@ -13,6 +13,8 @@ day2-bench = "hyperfine --warmup 3 './day2 ../../../day-02/input1.txt'"
 day13 = "mojo build -I /Users/u103330/dev/ExtraMojo day13.mojo && ./day13 ../../../day-13/input1.txt"
 day13-tiny = "mojo build -I /Users/u103330/dev/ExtraMojo day13.mojo && ./day13 ./tiny.txt"
 slice-bench = "mojo build -I /Users/u103330/dev/ExtraMojo test_slice.mojo && ./test_slice"
+day24 = "mojo build -I /Users/sethstadick/dev/ExtraMojo day24.mojo && ./day24 ../../../day-24/input1.txt"
+day24-tiny = "mojo build -I /Users/sethstadick/dev/ExtraMojo day24.mojo && ./day24 ./tiny.txt"
 
 [dependencies]
-max = ">=24.5.0,<25"
+max = ">=24.6.0,<25"
